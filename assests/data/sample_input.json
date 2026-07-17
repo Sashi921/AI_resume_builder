@@ -1,0 +1,36 @@
+{
+    "name":"Rahul Sharma",
+    "email":"rahul@gmail.com",
+    "phone":"+91 9876543210",
+    "location":"Delhi",
+    "summary":"Python Developer with AI and ML knowledge.",
+    "skills":[
+        "Python",
+        "Flask",
+        "Machine Learning",
+        "SQL",
+        "HTML",
+        "CSS"
+    ],
+    "education":[
+        {
+            "degree":"B.Tech CSE",
+            "college":"ABC University",
+            "year":"2025"
+        }
+    ],
+    "experience":[
+        {
+            "company":"XYZ Pvt Ltd",
+            "role":"Python Intern",
+            "duration":"6 Months",
+            "description":"Worked on AI Resume Builder Project."
+        }
+    ],
+    "projects":[
+        {
+            "title":"AI Resume Builder",
+            "description":"Created Resume Generator using Gemini API."
+        }
+    ]
+}

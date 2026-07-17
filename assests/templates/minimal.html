@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ name }} - Resume</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#333;
+    padding:40px;
+}
+
+.resume{
+    max-width:850px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border:1px solid #ddd;
+}
+
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-size:34px;
+}
+
+header p{
+    color:#666;
+    margin-top:8px;
+}
+
+.contact{
+    margin-top:12px;
+    font-size:14px;
+    color:#555;
+}
+
+section{
+    margin-top:30px;
+}
+
+section h2{
+    font-size:20px;
+    border-bottom:1px solid #999;
+    padding-bottom:5px;
+    margin-bottom:15px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+.item{
+    margin-bottom:18px;
+}
+
+.item h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.item small{
+    color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="resume">
+
+<header>
+
+<h1>{{ name }}</h1>
+
+<p>{{ headline }}</p>
+
+<div class="contact">
+
+{{ email }} |
+
+{{ phone }} |
+
+{{ location }}
+
+</div>
+
+</header>
+
+<section>
+
+<h2>Summary</h2>
+
+<p>{{ summary }}</p>
+
+</section>
+
+<section>
+
+<h2>Skills</h2>
+
+<ul>
+
+{% for skill in skills %}
+
+<li>{{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Experience</h2>
+
+{% for exp in experience %}
+
+<div class="item">
+
+<h3>{{ exp.role }}</h3>
+
+<strong>{{ exp.company }}</strong>
+
+<br>
+
+<small>{{ exp.duration }}</small>
+
+<p>{{ exp.description }}</p>
+
+</div>
+
+{% endfor %}
+
+</section>
+
+<section>
+
+<h2>Education</h2>
+
+{% for edu in education %}
+
+<div class="item">
+
+<h3>{{ edu.degree }}</h3>
+
+<p>{{ edu.college }}</p>
+
+<p>{{ edu.year }}</p>
+
+</div>
+
+{% endfor %}
+
+</section>
+
+<section>
+
+<h2>Projects</h2>
+
+{% for project in projects %}
+
+<div class="item">
+
+<h3>{{ project.title }}</h3>
+
+<p>{{ project.description }}</p>
+
+</div>
+
+{% endfor %}
+
+</section>
+
+</div>
+
+</body>
+</html>
