@@ -7,3 +7,4 @@ markdown==3.7
 beautifulsoup4==4.12.3
 pdfkit==1.0.0
 gunicorn
+groq
