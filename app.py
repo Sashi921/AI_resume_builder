@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, response
 import os
 
 from utils.ai_helper import generate_resume
@@ -7,6 +7,17 @@ from utils.file_handler import save_resume
 from utils.pdf_generator import generate_pdf
 
 app = Flask(__name__)
+@app.route("/sitemap.xml")
+def sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://ai-resume-builder-1-eiqx.onrender.com/</loc>
+        <priority>1.0</priority>
+    </url>
+</urlset>
+"""
+    return Response(xml, mimetype="application/xml")
 
 UPLOAD_FOLDER = "assets/data"
 OUTPUT_FOLDER = "output/resumes"
