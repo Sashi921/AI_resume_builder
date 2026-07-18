@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, response
+from flask import Flask, render_template, request, send_file, Response
 import os
 
 from utils.ai_helper import generate_resume
@@ -7,6 +7,16 @@ from utils.file_handler import save_resume
 from utils.pdf_generator import generate_pdf
 
 app = Flask(__name__)
+
+@app.route("/robots.txt")
+def robots():
+    return Response(
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Sitemap: https://ai-resume-builder-1-eiqx.onrender.com/sitemap.xml",
+        mimetype="text/plain"
+    )
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = """<?xml version="1.0" encoding="UTF-8"?>
